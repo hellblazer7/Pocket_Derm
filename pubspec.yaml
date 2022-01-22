@@ -10,6 +10,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   image_picker: ^0.8.4+4
+  animated_text_kit: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -22,4 +23,9 @@ flutter:
   uses-material-design: true
 
   assets:
-  - images/
+    - images/
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Italic-VariableFont_wght.ttf
+        - asset: fonts/Montserrat-VariableFont_wght.ttf

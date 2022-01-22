@@ -39,8 +39,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Text(
                       'Sign Up',
                       style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 60.0,
+                        fontSize: 50.0,
                       ),
                     ),
                   ],
@@ -119,7 +121,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               child: RoundedButton(
                 onPressed: () {
-                  print('Submit');
+
                   Navigator.popAndPushNamed(context, HomeScreen.id);
                 },
                 displayText: 'Submit',

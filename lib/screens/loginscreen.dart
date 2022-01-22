@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: const [
                     Padding(
                       padding: EdgeInsets.only(
-                        right: 5.0,
+                        right: 15.0,
                       ),
                       child: ImageIcon(
                         AssetImage('images/doctor_icon.png'),
@@ -39,6 +39,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     Text(
                       'Login',
                       style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
                         color: Colors.white,
                         fontSize: 60.0,
                       ),
@@ -103,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               child: RoundedButton(
                 onPressed: () {
-                  print('Submit');
+
                   Navigator.popAndPushNamed(context, HomeScreen.id);
                 },
                 displayText: 'Submit',

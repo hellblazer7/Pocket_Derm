@@ -1,8 +1,10 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pocketdermtest/components/roundedbutton.dart';
+
 
 class UploadScreen extends StatefulWidget {
   static const String id = 'upload_screen';
@@ -63,6 +65,8 @@ class _UploadScreenState extends State<UploadScreen> {
                     child: Text(
                       'Upload Image',
                       style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
                         color: Colors.white,
                         fontSize: 35.0,
                       ),
@@ -141,11 +145,11 @@ class _UploadScreenState extends State<UploadScreen> {
                         onPressed: () {
                           _openCamera(context);
                         },
-                        child: Text(
+                        child: const Text(
                           'Camera',
                           style: TextStyle(
                             fontSize: 20.0,
-                            color: Colors.teal.shade400,
+                            color: Colors.blueAccent,
                           ),
                         ),
                       ),
@@ -170,11 +174,11 @@ class _UploadScreenState extends State<UploadScreen> {
                         onPressed: () {
                           _openGallery(context);
                         },
-                        child: Text(
+                        child: const Text(
                           'Gallery',
                           style: TextStyle(
                             fontSize: 20.0,
-                            color: Colors.teal.shade400,
+                            color: Colors.blueAccent,
                           ),
                         ),
                       ),
