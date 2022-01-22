@@ -29,6 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Text(
                           'PocketDerm',
                           style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
                             color: Colors.white,
                             fontSize: 40.0,
                           ),
@@ -36,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       IconButton(
                         onPressed: () {
-                          print('icon button pressed');
+
                           Navigator.pop(context);
                         },
                         icon: const Icon(
