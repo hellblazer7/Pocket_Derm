@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "336413998018",
+    "project_id": "pocket-derm-66975",
+    "storage_bucket": "pocket-derm-66975.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336413998018:android:3fdb886e000900a06f345b",
+        "android_client_info": {
+          "package_name": "com.example.pocketdermtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336413998018-t5itvhnk1ns8uku09gtvnobn9oe69poo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_V7bwBIHa37phuMQ-8c57EUaVT1TAi7w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336413998018-t5itvhnk1ns8uku09gtvnobn9oe69poo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
