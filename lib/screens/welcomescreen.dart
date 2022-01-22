@@ -16,90 +16,94 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children:[
-            Expanded(
-              flex: 3,
-              child: Container(
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.only(right: 15.0),
-                        child: ImageIcon(
-                          AssetImage('images/hospital_icon.png'),
-                          size: 50.0,
-                          color: Colors.white,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            flex: 3,
+            child: Container(
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(right: 15.0),
+                      child: ImageIcon(
+                        AssetImage('images/hospital_icon.png'),
+                        size: 50.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                    AnimatedTextKit(
+                      animatedTexts: [
+                        TypewriterAnimatedText(
+                          'Welcome',
+                          textStyle: const TextStyle(
+                            fontFamily: 'Montserrat',
+                            color: Colors.white,
+                            fontSize: 50.0,
+                            fontWeight: FontWeight.w900,
+                          ),
+                          speed: const Duration(milliseconds: 200),
                         ),
-                      ),
-                      AnimatedTextKit(animatedTexts: [TypewriterAnimatedText('Welcome',textStyle:  const TextStyle(
-                        fontFamily: 'Montserrat',
-                           color: Colors.white,
-                           fontSize: 50.0,
-                        fontWeight: FontWeight.w900
-                         ),
-                      ),],isRepeatingAnimation: true,
-                        totalRepeatCount: 2,
-                      ),
-                    ],
-                  ),
+                      ],
+                      totalRepeatCount: 2,
+                    ),
+                  ],
                 ),
-                decoration: const BoxDecoration(
-                  color: Colors.lightBlueAccent,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(100.0),
-                    bottomRight: Radius.circular(100.0),
-                  ),
+              ),
+              decoration: const BoxDecoration(
+                color: Colors.lightBlueAccent,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(100.0),
+                  bottomRight: Radius.circular(100.0),
                 ),
               ),
             ),
-            const Expanded(
-              flex: 3,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 32.0),
-                child: Image(
-                  fit: BoxFit.fill,
-                  image: AssetImage(
-                    'images/doctor_photo.png',
-                  ),
+          ),
+          const Expanded(
+            flex: 3,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32.0),
+              child: Image(
+                fit: BoxFit.fill,
+                image: AssetImage(
+                  'images/doctor_photo.png',
                 ),
               ),
             ),
-            Expanded(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 80.0),
-                child: RoundedButton(
-                  onPressed: () {
-                    //Navigate to sign up page
-                    Navigator.pushNamed(context, SignUpScreen.id);
-                  },
-                  displayText: 'Sign Up',
-                  color: Colors.blue.shade900,
-                ),
+          ),
+          Expanded(
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 80.0),
+              child: RoundedButton(
+                onPressed: () {
+                  //Navigate to sign up page
+                  Navigator.pushNamed(context, SignUpScreen.id);
+                },
+                displayText: 'Sign Up',
+                color: Colors.blue.shade900,
               ),
             ),
-            Expanded(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 80.0),
-                child: RoundedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, LoginScreen.id);
-                  },
-                  displayText: 'Log In',
-                  color: Colors.purple.shade900,
-                ),
+          ),
+          Expanded(
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 80.0),
+              child: RoundedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, LoginScreen.id);
+                },
+                displayText: 'Log In',
+                color: Colors.purple.shade900,
               ),
             ),
-            const SizedBox(
-              height: 50.0,
-            ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 50.0,
+          ),
+        ],
       ),
     );
   }

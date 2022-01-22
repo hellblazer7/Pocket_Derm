@@ -4,7 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pocketdermtest/components/roundedbutton.dart';
-
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:uuid/uuid.dart';
 
 class UploadScreen extends StatefulWidget {
   static const String id = 'upload_screen';
@@ -15,8 +16,11 @@ class UploadScreen extends StatefulWidget {
 }
 
 class _UploadScreenState extends State<UploadScreen> {
+  var uuid = Uuid();
   dynamic imageFile;
   dynamic tobeUploadedFile;
+  firebase_storage.FirebaseStorage storage =
+      firebase_storage.FirebaseStorage.instance;
   void _openCamera(BuildContext context) async {
     final pickedFile = await ImagePicker().pickImage(
       source: ImageSource.camera,
@@ -39,6 +43,16 @@ class _UploadScreenState extends State<UploadScreen> {
         tobeUploadedFile = File(imageFile.path);
       },
     );
+  }
+
+  Future uploadImageToFirebase() async {
+    firebase_storage.Reference storageReference =
+        firebase_storage.FirebaseStorage.instance.ref('Image Storage').child(
+              uuid.v1(),
+            );
+    await storageReference.putFile(tobeUploadedFile);
+    String downloadURL = await storageReference.getDownloadURL();
+    print(downloadURL);
   }
 
   @override
@@ -196,7 +210,13 @@ class _UploadScreenState extends State<UploadScreen> {
                 bottom: 64.0,
               ),
               child: RoundedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (tobeUploadedFile != null) {
+                      uploadImageToFirebase();
+                    } else {
+                      print('null image');
+                    }
+                  },
                   displayText: 'Submit',
                   color: Colors.purple.shade900),
             ),

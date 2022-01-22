@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pocketdermtest/screens/uploadscreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:pocketdermtest/screens/welcomescreen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const id = 'home_screen';
@@ -10,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,8 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       IconButton(
                         onPressed: () {
-
-                          Navigator.pop(context);
+                          _auth.signOut();
+                          Navigator.popAndPushNamed(context, WelcomeScreen.id);
                         },
                         icon: const Icon(
                           Icons.power_settings_new,
