@@ -23,6 +23,7 @@ class TestApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute:
           _auth.currentUser != null ? HomeScreen.id : WelcomeScreen.id,
       routes: {
