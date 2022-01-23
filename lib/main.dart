@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pocketdermtest/screens/loginscreen.dart';
+import 'package:pocketdermtest/screens/resultscreen.dart';
 import 'package:pocketdermtest/screens/signupscreen.dart';
 import 'package:pocketdermtest/screens/uploadscreen.dart';
 import 'package:pocketdermtest/screens/welcomescreen.dart';
